@@ -18,7 +18,9 @@ typedef NS_ENUM(NSInteger, CustomDatePickerMode) {
 
 @protocol CustomDatePickerDelegate <NSObject>
 
-- (void)confirmSelect;
+- (void)selectTime:(NSString *)time;
+- (void)selectDate:(NSDate *)date;
+- (void)selectHalfADay:(NSString *)halfADay;
 
 @end
 

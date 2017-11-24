@@ -297,7 +297,6 @@
             if (component == 0)
             {
                 return self.yearMarr[row];
-                
             }
             else if (component == 1)
             {
@@ -453,7 +452,28 @@
 - (void)confirmSelected
 {
     [self removeFromSuperview];
-    [self.delegate confirmSelect];
+    
+    switch (_datePickerMode)
+    {
+        case 0:
+        {
+            [self.delegate selectTime:_time];
+        }
+            break;
+        case 1:
+        {
+            [self.delegate selectDate:_date];
+        }
+            break;
+        case 2:
+        {
+            [self.delegate selectHalfADay:_selectHalfADayRow == 0 ? @"上午" : @"下午"];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark - 通过年月求每月天数

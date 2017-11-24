@@ -31,7 +31,6 @@
     self.view.backgroundColor = UIColorFromRGB(0xf2f2f2);
     
     [self addView];
-    
 }
 
 - (void)addView
@@ -59,10 +58,17 @@
     [self.view addSubview:_picker];
 }
 
-
-- (void)confirmSelect
+- (void)selectTime:(NSString *)time
 {
-    NSLog(@"选中的日期 %@", [self strFromDate:_picker.date]);
+    NSLog(@"选中的时间 %@", time);
+}
+- (void)selectDate:(NSDate *)date
+{
+    NSLog(@"选中的日期 %@", [self strFromDate:date]);
+}
+- (void)selectHalfADay:(NSString *)halfADay
+{
+    NSLog(@"选中的时间段 %@", halfADay);
 }
 
 - (void)didReceiveMemoryWarning {
